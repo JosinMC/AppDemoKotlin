@@ -37,7 +37,6 @@ object UtilDataBase {
 
         // Inserción de las rutas
         for (arrayRuta in arrayRutas) {
-
             val values = ContentValues()
             values.put(Ruta::identificacion.name, arrayRuta[0])
             values.put(Ruta::nombre.name, arrayRuta[1])

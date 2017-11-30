@@ -1,8 +1,10 @@
 package cr.ac.ucr.ecci.cql.appdemokotlin
 
 import android.app.FragmentTransaction
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import cr.ac.ucr.ecci.cql.appdemokotlin.data.Ruta
 
 
@@ -15,9 +17,8 @@ class DetailsActivity : AppCompatActivity() {
         val ruta:Ruta = intent.getParcelableExtra(MainActivity.RUTA_TAG)
 
         // Se agrega el fragmento si no se habia hecho antes
-        val details: DetailsFragment? = fragmentManager.findFragmentById(R.id.fragment_frame) as DetailsFragment?
+        val details = fragmentManager.findFragmentById(R.id.fragment_frame) as DetailsFragment?
         if (details == null) {
-
             // Se crea el fragmento detalle
             val detailsFragment = DetailsFragment.newInstance(ruta)
 

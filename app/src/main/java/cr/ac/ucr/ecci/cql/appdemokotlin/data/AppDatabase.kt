@@ -38,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
                         .build()
 
         // Callback llamado al crear la base
-        var dataBaseCallback: RoomDatabase.Callback = object : RoomDatabase.Callback() {
+        var dataBaseCallback = object : RoomDatabase.Callback() {
             override fun onCreate(db: SupportSQLiteDatabase) {
                 // Se insertan datos iniciales al crear la base
                 UtilDataBase.insertInitialValuesBuses(db)

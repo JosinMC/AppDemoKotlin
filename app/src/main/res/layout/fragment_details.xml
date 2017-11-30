@@ -11,6 +11,31 @@
         android:id="@+id/details_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:lineSpacingExtra="10dp"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/maps_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center_vertical"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Ir al mapa" />
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/google_maps"/>
+    </LinearLayout>
 
 </LinearLayout>

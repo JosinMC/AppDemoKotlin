@@ -1,5 +1,6 @@
 package cr.ac.ucr.ecci.cql.appdemokotlin
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -28,9 +29,24 @@ class DetailsFragment : Fragment() {
         // El operador !! indica que inflater puede lanzar NPE
         val view = inflater!!.inflate(R.layout.fragment_details, container, false)
 
-        view.details_text.text = mRuta.toString()
-
+        view.details_text.text = getDetails()
+        // Se puede simplificar mucho la creacion de clases anonimas para los onClickListeners usando lambdas.
+        view.maps_button.setOnClickListener {openMap()}
         return view
+    }
+
+    fun openMap(){
+        val intent = Intent(activity, MapsActivity::class.java)
+        // El objeto se puede pasar entre actividades porque implementa Parcelable
+        intent.putExtra(MainActivity.RUTA_TAG, mRuta)
+        startActivity(intent)
+    }
+
+    fun getDetails(): String{
+        return "Nombre: ${mRuta.nombre}\n" +
+                "Tarifa: ${mRuta.tarifa}\n" +
+                "Pasajeros por unidad: ${mRuta.pasajerosUnidad}\n" +
+                "Cantidad de buses: ${mRuta.cantidadBuses}\n"
     }
 
     companion object {
